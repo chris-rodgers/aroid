@@ -13,14 +13,14 @@ $colors: red orange yellow lime dodgerblue purple violet red;
 .logo{
   width: 200px;
   &__path{
-    stroke-width: 8px;
+    stroke-width: 0px;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke: white;
     stroke-dasharray: 151.5 151.5 151.5;
-    animation: dash 10s linear infinite;
+    // animation: dash 10s linear infinite;
     transition: stroke-width 1s ease, fill 0.25s ease;
-    fill: #444444;
+    fill: #999;
   }
   &__stop{
     stop-color: nth($colors, 1);
