@@ -1,0 +1,55 @@
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$colors: red orange yellow lime dodgerblue purple violet red;
+
+.logo{
+  width: 200px;
+  &__path{
+    stroke-width: 8px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: white;
+    stroke-dasharray: 151.5 151.5 151.5;
+    animation: dash 10s linear infinite;
+    transition: stroke-width 1s ease, fill 0.25s ease;
+    fill: #444444;
+  }
+  &__stop{
+    stop-color: nth($colors, 1);
+    &--1{
+      animation: rainbow 5s infinite;
+    }
+    &--2{
+      animation: rainbow 5s infinite 1s;
+    }
+  }
+  &:hover &__polygon{
+    fill: white;
+    stroke-width: 0;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1400;
+  }
+  to {
+    stroke-dashoffset: -1400;
+  }
+}
+
+@keyframes rainbow {
+  @each $color in $colors {
+    #{index($colors, $color) / length($colors) * 100%}{
+      stop-color: $color;
+    }
+  }
+}

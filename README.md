@@ -1,2 +1,0 @@
-# aroid
-Created with CodeSandbox
