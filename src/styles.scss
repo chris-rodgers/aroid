@@ -37,6 +37,18 @@ $colors: red orange yellow lime dodgerblue purple violet red;
   }
 }
 
+video{   
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
 @keyframes dash {
   from {
     stroke-dashoffset: 1400;
