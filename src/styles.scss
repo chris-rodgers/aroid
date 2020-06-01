@@ -8,7 +8,8 @@ body {
   align-items: center;
 }
 
-$colors: red orange yellow lime dodgerblue purple violet red;
+$colors: red, orange, yellow, green, dodgerblue, purple, violet red;
+$colors2: violet, red, orange, yellow, green, dodgerblue, purple, violet;
 
 .logo{
   width: 200px;
@@ -20,15 +21,16 @@ $colors: red orange yellow lime dodgerblue purple violet red;
     stroke-dasharray: 151.5 151.5 151.5;
     // animation: dash 10s linear infinite;
     transition: stroke-width 1s ease, fill 0.25s ease;
-    fill: #999;
+    fill: #fff;
   }
   &__stop{
-    stop-color: nth($colors, 1);
     &--1{
-      animation: rainbow 5s infinite;
+      stop-color: nth($colors, 1);
+      animation: rainbow 5s infinite linear;
     }
     &--2{
-      animation: rainbow 5s infinite 1s;
+      stop-color: nth($colors2, 1);
+      animation: rainbow2 5s infinite linear 2s;
     }
   }
   &:hover &__polygon{
@@ -37,30 +39,17 @@ $colors: red orange yellow lime dodgerblue purple violet red;
   }
 }
 
-video{   
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -100;
-  position: fixed;
-  transform: translate(-50%, -50%);
-}
-
-@keyframes dash {
-  from {
-    stroke-dashoffset: 1400;
-  }
-  to {
-    stroke-dashoffset: -1400;
-  }
-}
-
 @keyframes rainbow {
   @each $color in $colors {
     #{index($colors, $color) / length($colors) * 100%}{
+      stop-color: $color;
+    }
+  }
+}
+
+@keyframes rainbow2 {
+  @each $color in $colors2 {
+    #{index($colors2, $color) / length($colors2) * 100%}{
       stop-color: $color;
     }
   }
