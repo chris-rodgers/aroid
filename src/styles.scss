@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  background-color: #1D1C2D;
 }
 body {
   height: 100%;
@@ -8,8 +9,8 @@ body {
   align-items: center;
 }
 
-$colors: red, orange, yellow, green, dodgerblue, purple, violet red;
-$colors2: violet, red, orange, yellow, green, dodgerblue, purple, violet;
+$colors: #4F80F0;
+$colors2: #4F80F0;
 
 .logo{
   width: 200px;
